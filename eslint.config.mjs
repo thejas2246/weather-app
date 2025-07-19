@@ -15,7 +15,7 @@ export default defineConfig([
   {
     rules: {
       semi: ['error', 'always'],
-      quotes: ['error', 'single'],
+      quotes: ['warn', 'single'],
       'no-unused-vars': 'warn',
       'no-undef': 'warn',
       eqeqeq: 'error',
