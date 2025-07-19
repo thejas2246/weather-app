@@ -22,3 +22,10 @@ function formatDailyForeCastDate(dailyForeCast) {
     day.datetime = format(new Date(date[0], date[1] - 1, date[2]), 'd MMM,eee');
   }
 }
+
+function formatHourlyForeCastTime(hourlyForeCast) {
+  for (let hours of hourlyForeCast) {
+    let hour = hours.datetime.split(':');
+    hours.datetime = format(new Date(2025, 7, 2, hour[0]), 'h a');
+  }
+}
