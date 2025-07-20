@@ -1,3 +1,17 @@
+/* custom variables */
+:root{
+    --main-background-color:#0F172A;
+    --card-background-color:#1E293B;
+    --primary-text-color:#FFFFFF;
+    --secondary-text-color:#94A3B8;
+}
+
+body{
+    margin: 0;
+    background-color: var(--main-background-color);
+    color: var(--primary-text-color);
+}
+/* form */
 form{
     position: relative;
 }
@@ -23,6 +37,33 @@ form>button{
 .from-item-container{
     width: 270px;
 }
+/* header */
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--primary-text-color);
+    font-family: poppins;
+    font-weight: 600;
+    box-shadow: 1px 0px 10px var(--secondary-text-color);
+}
+.header button{
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--card-background-color);
+    color: var(--primary-text-color);
+    font-family: inter;
+    font-weight: 400;
+
+}
+
+.header button:hover{
+    background-color: var(--primary-text-color);
+    color: var(--card-background-color);
+}
+/* main container */
 
 .main-container>div{
     display: flex;
@@ -33,3 +74,4 @@ form>button{
 .main-container>div>img{
     width: 25px;
 }
+
