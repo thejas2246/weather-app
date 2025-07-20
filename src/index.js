@@ -1,4 +1,4 @@
 import './styles.css';
 import { fetchData } from './fetch-data';
 
-fetchData('Kollam');
+fetchData('tokyo');

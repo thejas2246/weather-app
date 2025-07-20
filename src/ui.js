@@ -2,7 +2,7 @@ import map from './assets/icons/map.svg';
 import magnify from './assets/icons/magnify.svg';
 import { StoreData } from './process-data';
 
-export function displayMainContent() {
+function displayMainContent() {
   const container = document.querySelector('.container');
 
   const mainContainer = document.createElement('div');
@@ -42,7 +42,7 @@ export function displayMainContent() {
   mainContainer.appendChild(conditionContainer);
 }
 
-export function showCurrentConditions() {
+function showCurrentConditions() {
   let weatherDetalis = [
     {
       data: StoreData.currentForeCast.feelslike,
@@ -114,4 +114,40 @@ export function showCurrentConditions() {
   }
 
   container.appendChild(mainContainer);
+}
+
+function showHourlyForeCast() {
+  const container = document.querySelector('.container');
+  const mainContainer = document.createElement('div');
+  const titleContainer = document.createElement('div');
+  const flexContainer = document.createElement('div');
+  mainContainer.appendChild(titleContainer);
+  mainContainer.appendChild(flexContainer);
+
+  mainContainer.setAttribute('class', 'hourly-forecast-container');
+  titleContainer.textContent = 'Hourly ForeCast';
+
+  for (let hour of StoreData.hourlyForeCast) {
+    const itemElementContainer = document.createElement('div');
+    const date = document.createElement('p');
+    date.textContent = hour.datetime;
+    const image = document.createElement('img');
+    const url = require(`./assets/weather-icon/${hour.icon}.svg`);
+    image.src = url;
+    const temp = document.createElement('p');
+    temp.textContent = `${hour.temp}°`;
+
+    itemElementContainer.appendChild(date);
+    itemElementContainer.appendChild(image);
+    itemElementContainer.appendChild(temp);
+
+    mainContainer.appendChild(itemElementContainer);
+  }
+  container.appendChild(mainContainer);
+}
+
+export function display() {
+  displayMainContent();
+  showCurrentConditions();
+  showHourlyForeCast();
 }

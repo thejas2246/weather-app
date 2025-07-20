@@ -1,5 +1,5 @@
 import { processData } from './process-data';
-import { displayMainContent, showCurrentConditions } from './ui';
+import { display } from './ui';
 export async function fetchData(location) {
   const API_KEY = 'U42EPFYWWAXL8DWP2Q3XVKCA8';
   let response;
@@ -10,8 +10,7 @@ export async function fetchData(location) {
     let data = await response.json();
     console.log(data);
     processData(data);
-    displayMainContent();
-    showCurrentConditions();
+    display();
   } catch (e) {
     console.log(e);
   }
