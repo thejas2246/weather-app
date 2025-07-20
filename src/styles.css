@@ -11,6 +11,7 @@ body{
     margin: 0;
     background-color: var(--main-background-color);
     color: var(--primary-text-color);
+    margin-bottom: 50px;
 }
 /* form */
 form{
@@ -203,4 +204,48 @@ form>button{
    font-family: poppins;
     font-size: 1.1rem;
     font-weight:600;
+}
+
+/* daily foreCast  */
+
+.daily-forecast-container{
+    width: min(70%,1000px);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--card-background-color);
+    font-family: poppins;
+}  
+.daily-forecast-container>*:nth-child(1){
+   font-family: poppins;
+    font-size: 1.1rem;
+    font-weight:600;
+}  
+
+.daily-flex-container{
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 20px;
+}
+.daily-flex-container img{
+    width: 25px;
+    height: 25px;
+}
+.daily-flex-container div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: var(--card-background-color);
+}
+.daily-flex-container>div>div{
+    gap: 10px;
+}
+
+.daily-flex-container>div>div>*:nth-child(1){
+    width: 100px;
+}
+.daily-flex-container>div>div>*:nth-child(3){
+    color: var(--secondary-text-color);
 }

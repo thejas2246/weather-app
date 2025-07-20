@@ -160,6 +160,7 @@ function showDailyForeCast() {
   const mainContainer = document.createElement('div');
   const titleContainer = document.createElement('div');
   const flexContainer = document.createElement('div');
+  flexContainer.setAttribute('class', 'daily-flex-container');
 
   mainContainer.appendChild(titleContainer);
   mainContainer.appendChild(flexContainer);
@@ -177,13 +178,16 @@ function showDailyForeCast() {
     image.src = url;
     const temp = document.createElement('p');
     temp.textContent = `${day.temp}°`;
-
+    const condition = document.createElement('p');
+    condition.textContent = day.conditions;
     leftContainer.appendChild(date);
     leftContainer.appendChild(image);
+    leftContainer.appendChild(condition);
     itemElementContainer.appendChild(leftContainer);
     itemElementContainer.appendChild(temp);
 
-    mainContainer.appendChild(itemElementContainer);
+    flexContainer.appendChild(itemElementContainer);
+    mainContainer.appendChild(flexContainer);
   }
   container.appendChild(mainContainer);
 }
