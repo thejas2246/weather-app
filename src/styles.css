@@ -64,6 +64,14 @@ form>button{
     background-color: var(--primary-text-color);
     color: var(--card-background-color);
 }
+
+/* Container */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* main container */
 
 .main-container{
@@ -103,4 +111,51 @@ form>button{
     font-family: poppins;
    font-size: 1.01rem;
    color: var(--secondary-text-color);
+}
+
+/* Air Condition Container */
+.air-condition-container{
+    border: 1px solid var(--card-background-color);
+    width: min(50%,1000px);
+    padding: 2rem;
+    border-radius: 20px;
+}
+.air-condition-container>*:nth-child(1){
+    font-family: poppins;
+    font-size: 1.1rem;
+    font-weight:600;
+}
+.air-condition-container img{
+    width: 20px;
+    height: 20px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 30px;
+}
+.item-container>*:nth-child(1){
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+.item-container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    font-family: poppins;
+    margin-top: 20px;
+    justify-content:center
+}
+.item-container>*:nth-child(1)>p{
+    color: var(--secondary-text-color);
+    font-size: 0.9rem;
+    margin: 0;
+}
+.item-container>*:nth-child(2){
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: inter;
 }

@@ -91,6 +91,7 @@ function showCurrentConditions() {
   const mainContainer = document.createElement('div');
   const titleContainer = document.createElement('div');
   const girdContainer = document.createElement('div');
+  girdContainer.setAttribute('class', 'grid-container');
   mainContainer.appendChild(titleContainer);
   mainContainer.appendChild(girdContainer);
 
@@ -100,6 +101,7 @@ function showCurrentConditions() {
   //condition details
   for (let item of weatherDetalis) {
     const itemElementContainer = document.createElement('div');
+    itemElementContainer.setAttribute('class', 'item-container');
     const iconNameContainer = document.createElement('div');
     const stats = document.createElement('div');
     const image = document.createElement('img');
