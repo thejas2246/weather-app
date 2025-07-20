@@ -70,6 +70,7 @@ form>button{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 40px;
 }
 
 /* main container */
@@ -116,7 +117,7 @@ form>button{
 /* Air Condition Container */
 .air-condition-container{
     border: 1px solid var(--card-background-color);
-    width: min(50%,1000px);
+    width: min(70%,1000px);
     padding: 2rem;
     border-radius: 20px;
 }
@@ -158,4 +159,48 @@ form>button{
     font-size: 1.2rem;
     font-weight: 600;
     font-family: inter;
+}
+
+/* hourly forecast */
+
+.hourly-forecast-container{
+    border: 1px solid var(--card-background-color);
+    overflow: auto;
+    width: min(70%,1000px);
+    padding: 2rem;
+    border-radius: 20px;
+    scrollbar-color: var(--main-background-color) transparent;
+  scrollbar-width:thin;
+}
+.hourly-forecast-container img{
+    width: 24px;
+    height: 24px;
+}
+
+.hourly-forecast-container>*:nth-child(2){
+    display: flex;
+    gap: 20px;
+}
+
+.hourly-forecast-container>*:nth-child(2)>div{
+    background-color: var(--card-background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 65px;
+    border-radius: 10px;
+    font-family: poppins;
+    margin-top: 20px;
+}
+
+.hourly-forecast-container>*:nth-child(2)>div>:nth-child(1){
+    font-size: 0.8rem;
+    color: var(--secondary-text-color);
+}
+
+.hourly-forecast-container>*:nth-child(1){
+   font-family: poppins;
+    font-size: 1.1rem;
+    font-weight:600;
 }

@@ -149,7 +149,8 @@ function showHourlyForeCast() {
     itemElementContainer.appendChild(image);
     itemElementContainer.appendChild(temp);
 
-    mainContainer.appendChild(itemElementContainer);
+    flexContainer.appendChild(itemElementContainer);
+    mainContainer.appendChild(flexContainer);
   }
   container.appendChild(mainContainer);
 }
