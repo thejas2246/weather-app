@@ -23,3 +23,13 @@ form>button{
 .from-item-container{
     width: 270px;
 }
+
+.main-container>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.main-container>div>img{
+    width: 25px;
+}
