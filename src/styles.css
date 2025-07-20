@@ -19,11 +19,18 @@ form{
 }
 form>img{
     position: absolute;
-    top: 3px;
-    padding-left:5px ;
+    top: 8px;
+    padding-left:6px ;
 }
 input{
-    padding:3px 23px;
+    padding:5px 29px;
+    border-radius: 8px;
+    border-style: solid;
+    height: 20px;
+    border-color: var(--card-background-color);
+    background-color: var(--card-background-color);
+    outline-color: var(--hover-color);
+    color: var(--primary-text-color);
 }
 form>button{
     position: absolute;
@@ -31,11 +38,32 @@ form>button{
 .go{
     top:3px;
     right: 80px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    color: var(--secondary-text-color);
 }
 .exit{
-    top: 3px;
+    top: 2px;
     right: 50px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border:none;
+    color: var(--secondary-text-color);
 }
+.go:hover{
+background-color: var(--card-background-color);
+color: var(--primary-text-color);
+}
+
+.exit:hover{
+    background-color: var(--card-background-color);
+color: var(--primary-text-color);
+}
+
 .from-item-container{
     width: 270px;
 }
@@ -49,6 +77,12 @@ form>button{
     font-weight: 600;
     box-shadow: 1px 0px 1px var(--secondary-text-color);
 }
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 .header button{
     border: none;
     width: 30px;
@@ -58,7 +92,10 @@ form>button{
     color: var(--primary-text-color);
     font-family: inter;
     font-weight: 400;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .header button:hover{
@@ -71,6 +108,7 @@ form>button{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 40px;
 }
 
@@ -90,16 +128,16 @@ form>button{
 }
 
 .main-container>*:nth-child(1){
- color: var(--secondary-text-color);
- font-family: poppins;
- font-size: 1.2rem;
- gap: 10px;
+    color: var(--secondary-text-color);
+    font-family: poppins;
+    font-size: 1.2rem;
+    gap: 10px;
 }
 .main-container>*:nth-child(1):hover{
- color: var(--hover-color);
+    color: var(--hover-color);
 }
 .main-container>*:nth-child(2)>p{
- color: var(--primary-text-color);
+    color: var(--primary-text-color);
  font-family: poppins;
  font-size:4rem;
  margin: 0;
@@ -248,4 +286,29 @@ form>button{
 }
 .daily-flex-container>div>div>*:nth-child(3){
     color: var(--secondary-text-color);
+}
+
+/* dialog */
+dialog{
+    background-color: transparent;
+    border: none;
+    margin: 0; /* `margin: auto;` is the default. */
+ transform: translateX(-50%);
+ top: 100px;
+ left: 50%;
+}
+
+dialog::backdrop{
+    backdrop-filter: blur(3px);
+}
+
+
+/* error message */
+
+.container>p{
+    display: flex;
+    font-family: poppins;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(241, 241, 241, 0.89);
 }

@@ -7,11 +7,33 @@ export async function fetchData(location) {
     response = await fetch(
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${API_KEY}`
     );
-    let data = await response.json();
-    console.log(data);
-    processData(data);
-    display();
+    if (response.ok) {
+      let data = await response.json();
+      console.log(data);
+      processData(data);
+      display();
+    } else if (response.status === 400) {
+      showError('Enter valid location ');
+    } else if (response.status === 401) {
+      showError(
+        ' There is a problem with the API key, account or subscription. Sorry!'
+      );
+    } else if (response.status === 404) {
+      showError('NOT_FOUND ');
+    } else if (response.status === 429) {
+      showError('The account has exceeded their assigned limits');
+    } else {
+      showError('INTERNAL_SERVER_ERROR');
+    }
   } catch (e) {
     console.log(e);
   }
+}
+
+function showError(e) {
+  const container = document.querySelector('.container');
+  container.textContent = '';
+  const error = document.createElement('p');
+  error.textContent = e;
+  container.appendChild(error);
 }

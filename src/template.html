@@ -16,14 +16,9 @@
       <div class="from-item-container">
         <form action="">
           <img src="assets/icons/magnify.svg" alt="magnify" width="20px" />
-          <button class="go">Go</button>
-          <button class="exit">x</button>
-          <input
-            type="text"
-            name="search"
-            id="search"
-            placeholder="search for city..."
-          />
+          <button type="submit" class="go">Go</button>
+          <button type="reset" class="exit">x</button>
+          <input type="text" name="search" placeholder="search for city..." />
         </form>
       </div>
     </dialog>
@@ -32,6 +27,13 @@
       <nav>
         <button>&deg;C</button>
         <button>&deg;F</button>
+        <button type="button" id="search">
+          <img
+            src="./assets/icons/magnify.svg"
+            alt="search icon"
+            width="20px"
+          />
+        </button>
       </nav>
     </header>
     <div class="container"></div>

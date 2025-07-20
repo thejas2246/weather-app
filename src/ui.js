@@ -13,6 +13,7 @@ function displayMainContent() {
   //location
   const mainContainerLocation = document.createElement('div');
   mainContainer.appendChild(mainContainerLocation);
+  mainContainerLocation.addEventListener('click', openDialog);
 
   const mapIcon = document.createElement('img');
   mapIcon.src = map;
@@ -197,4 +198,9 @@ export function display() {
   showCurrentConditions();
   showHourlyForeCast();
   showDailyForeCast();
+}
+
+export function openDialog() {
+  const dialog = document.querySelector('dialog');
+  dialog.showModal();
 }
