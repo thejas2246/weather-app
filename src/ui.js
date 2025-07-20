@@ -29,8 +29,12 @@ function displayMainContent() {
   //temp
   const tempContainer = document.createElement('div');
   const temperature = document.createElement('p');
+  const image = document.createElement('img');
+  const url = require(`./assets/weather-icon/${StoreData.currentForeCast.icon}.svg`);
+  image.src = url;
   temperature.textContent = StoreData.currentForeCast.temp;
   tempContainer.appendChild(temperature);
+  tempContainer.appendChild(image);
   mainContainer.appendChild(tempContainer);
 
   //condition

@@ -45,7 +45,7 @@ form>button{
     color: var(--primary-text-color);
     font-family: poppins;
     font-weight: 600;
-    box-shadow: 1px 0px 10px var(--secondary-text-color);
+    box-shadow: 1px 0px 8px var(--secondary-text-color);
 }
 .header button{
     border: none;
