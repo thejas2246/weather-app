@@ -146,8 +146,42 @@ function showHourlyForeCast() {
   container.appendChild(mainContainer);
 }
 
+function showDailyForeCast() {
+  const container = document.querySelector('.container');
+  const mainContainer = document.createElement('div');
+  const titleContainer = document.createElement('div');
+  const flexContainer = document.createElement('div');
+
+  mainContainer.appendChild(titleContainer);
+  mainContainer.appendChild(flexContainer);
+
+  mainContainer.setAttribute('class', 'daily-forecast-container');
+  titleContainer.textContent = 'Daily ForeCast';
+
+  for (let day of StoreData.dailyForeCast) {
+    const itemElementContainer = document.createElement('div');
+    const leftContainer = document.createElement('div');
+    const date = document.createElement('p');
+    date.textContent = day.datetime;
+    const image = document.createElement('img');
+    const url = require(`./assets/weather-icon/${day.icon}.svg`);
+    image.src = url;
+    const temp = document.createElement('p');
+    temp.textContent = `${day.temp}°`;
+
+    leftContainer.appendChild(date);
+    leftContainer.appendChild(image);
+    itemElementContainer.appendChild(leftContainer);
+    itemElementContainer.appendChild(temp);
+
+    mainContainer.appendChild(itemElementContainer);
+  }
+  container.appendChild(mainContainer);
+}
+
 export function display() {
   displayMainContent();
   showCurrentConditions();
   showHourlyForeCast();
+  showDailyForeCast();
 }
