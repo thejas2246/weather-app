@@ -312,3 +312,27 @@ dialog::backdrop{
     font-weight: 600;
     color: rgba(241, 241, 241, 0.89);
 }
+
+/* loader  */
+.loader {
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  display: none;
+  top: 80px;
+    left: 50%; 
+
+}
+
+.active{
+    display: block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

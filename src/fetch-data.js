@@ -1,6 +1,8 @@
 import { processData } from './process-data';
 import { display } from './ui';
 export async function fetchData(location) {
+  const loader = document.querySelector('.loader');
+  loader.classList.add('active');
   const API_KEY = 'U42EPFYWWAXL8DWP2Q3XVKCA8';
   let response;
   try {
@@ -28,6 +30,7 @@ export async function fetchData(location) {
   } catch (e) {
     console.log(e);
   }
+  loader.classList.remove('active');
 }
 
 function showError(e) {
