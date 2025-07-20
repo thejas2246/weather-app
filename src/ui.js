@@ -32,7 +32,9 @@ function displayMainContent() {
   const image = document.createElement('img');
   const url = require(`./assets/weather-icon/${StoreData.currentForeCast.icon}.svg`);
   image.src = url;
-  temperature.textContent = StoreData.currentForeCast.temp;
+  temperature.textContent = `${
+    StoreData.currentForeCast.temp
+  }${String.fromCodePoint(176)}`;
   tempContainer.appendChild(temperature);
   tempContainer.appendChild(image);
   mainContainer.appendChild(tempContainer);

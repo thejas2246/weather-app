@@ -4,6 +4,7 @@
     --card-background-color:#1E293B;
     --primary-text-color:#FFFFFF;
     --secondary-text-color:#94A3B8;
+    --hover-color:#60A5FA;
 }
 
 body{
@@ -45,7 +46,7 @@ form>button{
     color: var(--primary-text-color);
     font-family: poppins;
     font-weight: 600;
-    box-shadow: 1px 0px 8px var(--secondary-text-color);
+    box-shadow: 1px 0px 1px var(--secondary-text-color);
 }
 .header button{
     border: none;
@@ -65,6 +66,9 @@ form>button{
 }
 /* main container */
 
+.main-container{
+    margin: 30px 0;
+}
 .main-container>div{
     display: flex;
     align-items: center;
@@ -72,6 +76,31 @@ form>button{
     gap: 10px;
 }
 .main-container>div>img{
-    width: 25px;
+    width: 1.2rem;
 }
 
+.main-container>*:nth-child(1){
+ color: var(--secondary-text-color);
+ font-family: poppins;
+ font-size: 1.2rem;
+ gap: 10px;
+}
+.main-container>*:nth-child(1):hover{
+ color: var(--hover-color);
+}
+.main-container>*:nth-child(2)>p{
+ color: var(--primary-text-color);
+ font-family: poppins;
+ font-size:4rem;
+ margin: 0;
+}
+
+.main-container>*:nth-child(2)>img{
+    width: 4rem;
+}
+
+.main-container>*:nth-child(3)>p{
+    font-family: poppins;
+   font-size: 1.01rem;
+   color: var(--secondary-text-color);
+}
