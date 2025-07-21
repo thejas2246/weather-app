@@ -97,6 +97,11 @@ nav{
     align-items: center;
     
 }
+button.active-button{
+     background-color: var(--primary-text-color);
+    color: var(--card-background-color);
+}
+
 
 .header button:hover{
     background-color: var(--primary-text-color);

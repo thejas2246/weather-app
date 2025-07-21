@@ -1,6 +1,10 @@
 import map from './assets/icons/map.svg';
 import magnify from './assets/icons/magnify.svg';
-import { StoreData } from './process-data';
+import {
+  convertCelsiusToFahrenheit,
+  StoreData,
+  tempStatus,
+} from './process-data';
 
 function displayMainContent() {
   const container = document.querySelector('.container');
@@ -33,8 +37,11 @@ function displayMainContent() {
   const image = document.createElement('img');
   const url = require(`./assets/weather-icon/${StoreData.currentForeCast.icon}.svg`);
   image.src = url;
+  console.log(tempStatus.getTemp());
   temperature.textContent = `${
-    StoreData.currentForeCast.temp
+    tempStatus.getTemp()
+      ? convertCelsiusToFahrenheit(StoreData.currentForeCast.temp)
+      : StoreData.currentForeCast.temp
   }${String.fromCodePoint(176)}`;
   tempContainer.appendChild(temperature);
   tempContainer.appendChild(image);
@@ -52,7 +59,9 @@ function displayMainContent() {
 function showCurrentConditions() {
   let weatherDetalis = [
     {
-      data: StoreData.currentForeCast.feelslike,
+      data: tempStatus.getTemp()
+        ? convertCelsiusToFahrenheit(StoreData.currentForeCast.feelslike)
+        : StoreData.currentForeCast.feelslike,
       iconName: 'feels-like',
       name: 'Feels Like',
       symbol: String.fromCodePoint(176),
@@ -144,7 +153,9 @@ function showHourlyForeCast() {
     const url = require(`./assets/weather-icon/${hour.icon}.svg`);
     image.src = url;
     const temp = document.createElement('p');
-    temp.textContent = `${hour.temp}°`;
+    temp.textContent = `${
+      tempStatus.getTemp() ? convertCelsiusToFahrenheit(hour.temp) : hour.temp
+    }°`;
 
     itemElementContainer.appendChild(date);
     itemElementContainer.appendChild(image);
@@ -178,7 +189,9 @@ function showDailyForeCast() {
     const url = require(`./assets/weather-icon/${day.icon}.svg`);
     image.src = url;
     const temp = document.createElement('p');
-    temp.textContent = `${day.temp}°`;
+    temp.textContent = `${
+      tempStatus.getTemp() ? convertCelsiusToFahrenheit(day.temp) : day.temp
+    }°`;
     const condition = document.createElement('p');
     condition.textContent = day.conditions;
     leftContainer.appendChild(date);
@@ -194,6 +207,7 @@ function showDailyForeCast() {
 }
 
 export function display() {
+  setActiveMeasurement();
   displayMainContent();
   showCurrentConditions();
   showHourlyForeCast();
@@ -203,4 +217,16 @@ export function display() {
 export function openDialog() {
   const dialog = document.querySelector('dialog');
   dialog.showModal();
+}
+
+export function setActiveMeasurement() {
+  const fahrenheitButton = document.querySelector('.f');
+  const celsiusButton = document.querySelector('.c');
+  if (tempStatus.getTemp()) {
+    celsiusButton.classList.add('active-button');
+    fahrenheitButton.classList.remove('active-button');
+  } else {
+    celsiusButton.classList.remove('active-button');
+    fahrenheitButton.classList.add('active-button');
+  }
 }

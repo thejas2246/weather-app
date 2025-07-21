@@ -1,9 +1,9 @@
 import { format } from 'date-fns';
 
-let tempStatus = {
+export let tempStatus = {
   isCelsius: false,
-  toggleTemp: function () {
-    this.isCelsius = !this.isCelsius;
+  setTemp: function (value) {
+    this.isCelsius = value;
   },
   getTemp: function () {
     return this.isCelsius;
@@ -39,4 +39,8 @@ function formatHourlyForeCastTime(hourlyForeCast) {
     let hour = hours.datetime.split(':');
     hours.datetime = format(new Date(2025, 7, 2, hour[0]), 'h a');
   }
+}
+
+export function convertCelsiusToFahrenheit(temp) {
+  return ((temp - 32) / (9 / 5)).toFixed(1);
 }
