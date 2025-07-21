@@ -28,7 +28,7 @@ export async function fetchData(location) {
       showError('INTERNAL_SERVER_ERROR');
     }
   } catch (e) {
-    console.log(e);
+    showError(e);
   }
   loader.classList.remove('active');
 }

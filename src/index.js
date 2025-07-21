@@ -1,6 +1,7 @@
 import './styles.css';
 import { fetchData } from './fetch-data';
 import { openDialog } from './ui';
+import { tempStatus } from './process-data';
 
 fetchData('tokyo');
 

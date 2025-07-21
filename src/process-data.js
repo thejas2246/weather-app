@@ -1,4 +1,15 @@
 import { format } from 'date-fns';
+
+let tempStatus = {
+  isCelsius: false,
+  toggleTemp: function () {
+    this.isCelsius = !this.isCelsius;
+  },
+  getTemp: function () {
+    return this.isCelsius;
+  },
+};
+
 export let StoreData = {
   locationName: '',
   currentForeCast: '',
